@@ -1,0 +1,44 @@
+/* Define Computer Modern font with @font-face */
+@font-face {
+  font-family: 'Computer Modern';
+  src: url('fonts/cm-unicode-0.7.0-ttf.tar/cm-unicode-0.7.0-ttf/cm-unicode-0.7.0/cmunrm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define colors as variables in .css file */
+:root {
+  --uwGold: rgb(255, 196, 37);
+  --uwBrown: rgb(73, 47, 36);
+  --uwRed: rgb(197, 5, 12);
+}
+
+/* Apply Computer Modern as the primary font for the website */
+body { font-family: 'Computer Modern', serif; }
+
+/* Coloring for hyperlinks */
+.custom-link1 { color: var(--uwBrown); }
+.custom-link2 { color: var(--uwRed); }
+
+/* Get header to appear next to picture using flexbox */
+.header-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  gap: 20px; /* Adds space between the image and the text */
+}
+.header-text h1 { margin: 0; /* Removes default margin to keep spacing tight */ }
+.header-text p { margin: 0; font-size: 20px; }
+
+/* Define colors to be used in .html file */
+.uwGold { color: var(--uwGold); }
+.uwBrown { color: var(--uwBrown); }
+
+.bucking-horse-line {
+    display: inline-block;
+    margin-left: 10px; /* Center the images vertically */
+}
+.bucking-horse-line img {
+    width: 20px;  /* Set width of each image */
+    height: 20px; /* Set height of each image */
+    margin-right: 5px; /* Space between images */
+}
