@@ -50,7 +50,7 @@ body { font-family: 'Computer Modern', serif; }
   right: 20px;
   width: 400px;          /* fixed width; adjust as you like */
   aspect-ratio: 16 / 9;  /* auto height from width */
-  overflow: clip;
+  overflow: hidden;
   z-index: 1000;
 }
 
