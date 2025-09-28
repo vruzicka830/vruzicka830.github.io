@@ -45,22 +45,22 @@ body { font-family: 'Computer Modern', serif; }
 
 /* --- Slideshow core --- */
 .slideshow {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 400px;          /* fixed width; adjust as you like */
-  aspect-ratio: 16 / 9;  /* auto height from width */
-  overflow: hidden;
-  z-index: 1000;
+  position: relative;
+  max-width: 920px;
+  margin: 24px auto;
+  border-radius: 12px;
+  overflow: clip;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  background: #000; /* so letterboxing is black */
 }
 
-/* Fill the box defined by .slideshow */
+/* Keep aspect ratio; adjust as you like */
 .slideshow .slides {
   position: relative;
-  height: 100%;          /* fill parent's aspect-ratio box */
+  aspect-ratio: 16 / 9;
 }
 
-/* Slides stack; only one is visible */
+/* Slides stack; only the active one is visible */
 .slide {
   position: absolute;
   inset: 0;
@@ -84,7 +84,7 @@ body { font-family: 'Computer Modern', serif; }
   display: block;
 }
 
-/* Caption at the bottom */
+/* Caption */
 .slide figcaption {
   color: #f3f3f3;
   background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
@@ -114,8 +114,46 @@ body { font-family: 'Computer Modern', serif; }
 .nav.prev { left: 10px; }
 .nav.next { right: 10px; }
 
+/* Dots */
+.dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+}
+.dots button {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+  padding: 0;
+}
+.dots button[aria-current="true"] {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.35);
+}
+
+/* Play/Pause button */
+.playpause {
+  position: absolute;
+  right: 12px; top: 12px;
+  border: none;
+  background: rgba(255,255,255,.85);
+  border-radius: 999px;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  cursor: pointer; font-size: 14px;
+}
+.playpause:hover { background: white; }
+
+/* Pause autoplay on hover (visual hint only; logic in JS) */
+.slideshow:hover .playpause { background: white; }
+
 /* Reduce motion preference */
 @media (prefers-reduced-motion: reduce) {
   .slide { transition: none; }
 }
-
