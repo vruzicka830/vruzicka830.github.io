@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+sli<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css\styles.css">
   <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
   <div class="header-container">
     <img src="images/profile.jpg" alt="My Profile Picture" width="200">
@@ -46,7 +47,35 @@ has been submited to the Journal of Noncommutative Geometry.</p>
         Corporation (<a href="https://www.pelletron.com/" target="_blank" rel="noopener noreferrer">NEC</a>)
         in Middleton, WI where I helped design particle 
         accelerator systems. I left NEC in the fall of 2020 to study math at the University of Wyoming.<p>
-  </main>
+  
+<!-- Slideshow -->
+<div class="slideshow" role="region" aria-label="Photo Slideshow">
+  <div class="slides" id="slides">
+    <figure class="slide" data-index="0" aria-hidden="false">
+      <img src="images/greetings.jpg" alt="Greetings from Wyoming!" loading="lazy">
+      <figcaption></figcaption>
+    </figure>
+
+    <figure class="slide" data-index="1" aria-hidden="true">
+      <img src="images/china.jpg" alt="Vince standing outside of math department
+       at Northeast Normal University" loading="lazy">
+      <figcaption>Northeast Normal University, Changchun, Jilin, China</figcaption>
+    </figure>
+  <\div>
+
+  <!-- Controls -->
+    <button class="nav prev" aria-label="Previous slide" id="prevBtn" type="button">‹</button>
+    <button class="nav next" aria-label="Next slide" id="nextBtn" type="button">›</button>
+</div>
+
+
+
+    </main>
+
+
+<!-- Script -->
+<script src="js/slideshow.js"></script>
+
 
 </body>
 </html>

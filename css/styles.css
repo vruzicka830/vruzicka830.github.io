@@ -42,3 +42,80 @@ body { font-family: 'Computer Modern', serif; }
     height: 20px; /* Set height of each image */
     margin-right: 5px; /* Space between images */
 }
+
+/* --- Slideshow core --- */
+.slideshow {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 400px;          /* fixed width; adjust as you like */
+  aspect-ratio: 16 / 9;  /* auto height from width */
+  overflow: clip;
+  z-index: 1000;
+}
+
+/* Fill the box defined by .slideshow */
+.slideshow .slides {
+  position: relative;
+  height: 100%;          /* fill parent's aspect-ratio box */
+}
+
+/* Slides stack; only one is visible */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(.985);
+  transition: opacity 300ms ease, transform 300ms ease;
+  display: grid;
+  grid-template-rows: 1fr auto; /* image + caption */
+}
+
+.slide[aria-hidden="false"] {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption at the bottom */
+.slide figcaption {
+  color: #f3f3f3;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  padding: 10px 14px 14px;
+  font-size: 0.95rem;
+}
+
+/* Prev/Next buttons */
+.nav {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.75);
+  color: #111;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  outline-offset: 4px;
+  user-select: none;
+}
+.nav:hover { background: rgba(255,255,255,.95); }
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: none; }
+}
+
