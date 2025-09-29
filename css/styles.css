@@ -79,8 +79,8 @@ body { font-family: 'Computer Modern', serif; }
 
 .slide img {
   width: 100%;
-  height: auto;
-  object-fit: none;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
