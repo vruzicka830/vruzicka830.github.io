@@ -11,6 +11,7 @@
   --uwGold: rgb(255, 196, 37);
   --uwBrown: rgb(73, 47, 36);
   --uwRed: rgb(197, 5, 12);
+  --necBlue: rgb(0, 0, 238);
 }
 
 /* Apply Computer Modern as the primary font for the website */
@@ -19,6 +20,7 @@ body { font-family: 'Computer Modern', serif; }
 /* Coloring for hyperlinks */
 .custom-link1 { color: var(--uwBrown); }
 .custom-link2 { color: var(--uwRed); }
+.custom-link3 { color: var(--necBlue); }
 
 /* Get header to appear next to picture using flexbox */
 .header-container {
